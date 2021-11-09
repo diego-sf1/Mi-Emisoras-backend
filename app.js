@@ -29,7 +29,7 @@ app.use(session({
 }))
 
 //colocamos el enrutador
-require('./route')
+app.use(require('./route'))
 
 //colocamos una respuesta de error
 app.use((req,res)=>{
