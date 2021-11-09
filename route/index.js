@@ -1,4 +1,4 @@
-const route = require('express').Route()
+const route = require('express').Router()
 
 //los enpoint para la api rest
 
