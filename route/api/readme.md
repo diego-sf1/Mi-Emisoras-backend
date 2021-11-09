@@ -6,7 +6,7 @@
 Devuelve la lista de todas las estaciones de nuestra data
   <div>
     <pre>
-    [{
+    {
     "s124197": {
       "url": "http://opml.radiotime.com/Tune.ashx?id=s124197&filter=l1", 
       "lang": "l1",
@@ -20,7 +20,7 @@ Devuelve la lista de todas las estaciones de nuestra data
     {
       ...
     },
-    ...]
+    ...}
     </pre>
   </div>
 </li>
