@@ -27,18 +27,18 @@ Devuelve la lista de todas las estaciones de nuestra data
 <li>
   <strong>/v1/station/:id</strong>
 Devuelve una estación en particular
+  <h6>ejemplo: /v1/station/s124197</h6>
       <pre>
     {
-      "id":"s124197",
-      "url": "http://opml.radiotime.com/Tune.ashx?id=s124197&filter=l1", 
-      "lang": "l1",
-      "langName":"English",
+      "url":"http://opml.radiotime.com/Tune.ashx?id=s124197&filter=l1",
+      "lang":"l1",
+      "image":"http://radiotime-logos.s3.amazonaws.com/s124197q.png",
+      "name":"Radio FrequencyCast UK Tech (UK)",
+      "description":"Technology radio show from...",
       "gen":"g2738",
       "genName":"Consumer & Technology",
-      "image": "http://radiotime-logos.s3.amazonaws.com/s124197q.png", 
-      "name": "Radio FrequencyCast UK Tech (UK)", 
-      "description": "Technology radio show from..."
-    }
+      "langName":"English"
+     }
     </pre>
 </li>
 <li>
