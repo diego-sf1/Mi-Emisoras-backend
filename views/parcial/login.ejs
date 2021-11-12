@@ -1,0 +1,57 @@
+<div class="container ">
+	<div class="row justify-content-center mt-3 mb-3">
+		<div class="col-md-4 align-self-center bg-white p-3 text-center">
+			<p>¿Tienes una cuenta? <a href="/registrarse">Registrarte</a></p>
+			<form action="/login" method="post" class="needs-validation" novalidate>
+					<% if(typeof error !='undefined'){
+						if(error['user']){ %>
+						<div class="alert alert-danger" role="alert">
+  							<%= error['user'] %>
+						</div>
+					<%	}else if (error['pass']) { %>
+						<div class="alert alert-danger" role="alert">
+  							<%= error['pass'] %>
+						</div>
+
+					<%  }
+					} %>
+					<div class="form-group">
+						<label for="nombre">Usuario:</label>
+						<input  class="form-control" type="text" name="usuario" id="nombre" value="" placeholder="Ingrese su nombre de Usuario" required>
+						<div class="invalid-feedback">
+        					Por Favor ingrese nombre de usuario.
+      					</div>
+					</div>
+					<div class="form-group">
+						<label for="password">Contraseña</label>
+						<input class="form-control" type="password" name="pass" id="password" value="" placeholder="Ingrese su Contraseña" required>
+						<div class="invalid-feedback">
+        					Por Favor ingrese su contraseña.
+      					</div>
+					</div>
+					<input type="submit" name="ingresar" value="Iniciar Sesión" class="btn btn-primary mb-2">
+				</form>
+		</div>
+		<script>
+			(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+		</script>
+	</div>
+</div>
