@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname,'public')))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/dev',express.static(path.join(__dirname,'node_modules/bootstrap/dist')))
+app.use('/icons',express.static(path.join(__dirname,'node_modules/bootstrap-icons')))
 app.use('/ckeditor4',express.static(path.join(__dirname, 'node_modules/ckeditor4')));
 
 //usamos el middleware de express para sesiones, para que registre las peticiones al servidor
@@ -33,7 +34,8 @@ app.use(require('./route'))
 
 //colocamos una respuesta de error
 app.use((req,res)=>{
-  res.render('404')
+	res.locals.contenido = '404'
+  res.render('index')
 })
 
 
