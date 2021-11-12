@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio - Mi Radio Emisoras</title>
+	<link rel="stylesheet" href="/dev/css/bootstrap.css">
+	<link rel="stylesheet" href="/icons/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="/css/main.css?<%- Date.now() %>">
+	<script src="/dev/js/bootstrap.js"></script>
+	<script src="/js/script.js?<%- Date.now() %>"></script>
+</head>
+<body>
+	<div class="container-fluid d-none d-lg-block" id="mtop">
+		
+	</div>
+	<header class="container-fluid d-none d-lg-block">
+		<a href="/">
+			<img src="https://miradioemisoras.com/wp-content/uploads/2021/05/DESINGlogo-192x192.png" alt="">
+		</a>
+	</header>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      			<span class="navbar-toggler-icon"></span>
+    		</button>
+    		<a class="navbar-brand d-block d-lg-none" href="/"><img src="https://miradioemisoras.com/wp-content/uploads/2021/05/DESINGlogo-192x192.png" alt=""></a>
+    		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    				<li class="nav-item "><a href="/" class="nav-link mre-link">Inicio</a></li>
+    				<li class="nav-item "><a href="/para-ti" class="nav-link mre-link">Para ti</a></li>
+    				<li class="nav-item "><a href="/buscar" class="nav-link mre-link d-block d-lg-none">Buscar</a></li>
+    				<li class="nav-item"><a href="/estaciones-en-vivo" class="nav-link mre-link">Estaciones en Vivo</a></li>
+    				<li class="nav-item "><a href="/recientes" class="nav-link mre-link">Recientes</a></li>
+    				<li class="nav-item "><a href="/deportes" class="nav-link mre-link">Deportes</a></li>
+    				<li class="nav-item "><a href="/noticias" class="nav-link mre-link">Noticias</a></li>
+    				<li class="nav-item "><a href="/musica" class="nav-link mre-link">Música</a></li>
+    				<li class="nav-item "><a href="/podcast" class="nav-link mre-link">Podcast</a></li>
+    				<li class="nav-item "><a href="/iniciar-sesion" class="nav-link mre-link">Iniciar Sesión</a></li>
+    				<li class="nav-item "><a href="/registrarse" class="nav-link mre-link">Registrarse</a></li>
+    				<li class="nav-item "><a href="/obtener-la-app" class="nav-link mre-link">Obtener la app</a></li>
+    			</ul>
+    		</div>
+    		<a href="/buscar" class="mre-link d-none d-lg-block"><i class="bi bi-search"></i></a>
+		</div>
+	</nav>
+	<main id="principal">
+		<%
+			if (typeof contenido != 'undefined') { %>
+			<%- include(contenido) %>
+		<%	}
+		%>
+	</main>
+	<address>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-2">
+					<a href="/">
+						<img src="https://miradioemisoras.com/wp-content/uploads/2021/05/DESINGlogo-192x192.png" alt="" class="w-100">
+					</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<p class="mt-3">Música, radio y podcasts, todo gratis. Escucha en línea o descarga la aplicación<br>Mi Radio Emisoras</p>
+				</div>
+				<div class="col-md-2">
+					<h5>Escuchar Ahora</h5>
+				</div>
+				<div class="col-md-2">
+					<h5>Acerca de Nosotros</h5>
+				</div>
+				<div class="col-md-2">
+					<h5>Producto</h5>
+				</div>
+				<div class="col-md-2">
+					<h5>Comunidades</h5>
+				</div>
+			</div>
+		</div>
+	</address>
+	<footer class="text-center">
+		<p>&copy; <strong>2021 Mi Radio Emisoras. <em>Todos</em> los derechos reservados</strong></p>
+	</footer>
+	<script>
+		let mre = new miradioemisoras()
+		if (location.pathname=='/estaciones-en-vivo') {
+			mre.estacionesLocales('locals')
+		}
+	</script>
+</body>
+</html>
