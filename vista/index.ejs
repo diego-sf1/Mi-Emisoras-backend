@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="theme-color" content="#460251">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%- typeof titulo != 'undefined'?titulo:'Inicio' %> - Mi Radio Emisoras</title>
+	<link rel="stylesheet" href="/css/main.css?<%- Date.now() %>">
+	<script src="/js/script.js?<%- Date.now() %>"></script>
+</head>
+<body class="<%= clase %>">
+	<header>
+		<div class="main-head">
+			<div class="logo">
+				<a href="/" class="desktop">
+					<img src="/favicon-96x96.png" alt="">
+				</a>
+				<a href="/" class="movil">
+					<img src="/img/logo-icon.png" alt="">
+				</a>
+			</div>
+			<nav>
+				<div class="hamburguesa">
+					<div class="linea"></div>
+					<div class="linea"></div>
+					<div class="linea"></div>
+				</div>
+				<div class="overlay">
+					<ul>
+						<li><a href="/"><img src="/img/logo-icon.png" alt=""></a></li>
+						<li><a href="/estaciones-en-vivo">Estaciones en Vivo</a></li>
+						<li><a href="/recientes">Recientes</a></li>
+						<li><a href="/música">Música</a></li>
+						<li><a href="/podcasts">Podcasts</a></li>
+						<li><a href="/noticias">Noticias</a></li>
+						<li><a href="/registrarse">Registrarse</a></li>
+						<li><a href="/iniciar-sesion">Iniciar sesión</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div class="search">
+				<i class="lupa"></i><input type="text" value="" placeholder="Empieza a buscar ahora">
+			</div>
+			<div class="btn">
+				<div class="btn-content">
+					<p>obtener la App</p>	
+				</div>
+			</div>
+			
+		</div>
+	</header>
+
+	<main>
+		<% if (typeof contenido!='undefined') { %>
+			<%- include(contenido) %>
+		<% } %>
+	</main>
+	<address>
+		<div class="infos">
+			<div class="col">
+				<div>
+					<img src="/img/logo-icon.png" alt="">
+				</div>
+				<p>Música, radio y podcasts, todo gratis. Escucha en línea o descarga la aplicación</p>
+				<div class="group-social">
+					<i class="facebook"></i><i class="instagram"></i><i class="twiter"></i>
+				</div>
+			</div>
+			<div class="col">
+				<h3>Escuchar  ></h3>
+			</div>
+			<div class="col">
+				<h3>Mi Radio  ></h3>
+			</div>
+			<div class="col">
+				<h3>Producto  ></h3>
+			</div>
+			<div class="col">
+				<h3>Comunidades  ></h3>
+			</div>
+		</div>
+	</address>
+	<footer>
+		<hr style="border: 2px solid #4C4F69;">
+		<div class="contenedor">
+			<div>
+				<a href="/politica-de-privacidad">Privacidad</a>
+				<a href="/terminos-y-usos">Términos</a>
+				<a href="">Emisoras live</a>
+				<a href="">Ayuda</a>
+				<a href="">dispositivos</a>
+			</div>
+			<p>&copy;2021  Mi Radio Emisoras. Todos los derechos Reservados</p>	
+		</div>
+		
+	</footer>
+</body>
+</html>
