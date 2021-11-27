@@ -3,23 +3,49 @@
 		<div class="col">
 			<p>Deportes en vivo,<br>música, noticias y<br>podcasts <i class="flecha"></i></p>
 			<div class="search">
-				<i class="lupa"></i><input type="text" value="" placeholder="Empieza a buscar ahora">
+				<i class="lupa"></i><input type="text" value="" placeholder="Empieza a buscar ahora" onchange="location.href='/buscar/?s='+this.value">
 			</div>
 		</div>
 		<div class="col col-rigth">
 			<img src="/img/Group 1.png" alt="">
 		</div>
+		<div class="col movil">
+			<div class="one">
+
+			</div>
+			<div class="two"></div>
+		</div>
+	</div>
+</section>
+<section id="resultSearch">
+	
+	<div class="contenido">
+		<div class="title"></div>
+		<div class="content" style="display: flex;flex-direction: row;flex-wrap: wrap;"></div>
 	</div>
 </section>
 <section id="nuevo">
 	<div class="contenido">
-		<div class="col col-left">
+		<div class="col col-left desktop">
 			<p>Nuevo</p>
 			<p>MiRadio Emisoras<br>online gratis</p>
+		</div>
+		<div class="col col-left movil">
+			<p>MiRadio Emisoras online gratis</p>
 		</div>
 		<div class="col col-rigth">
 			<p>	Personaliza tu experiencia! <br>Disfruta de una experiencia sin interrupciones en todos los dispositivos y recomendaciones personalizadas basadas en tu escucha (Solo toma 30 segundos).
 			</p>
+<!-- 			<button class="btn">
+				<div class="btn-content">
+					<p>Crear Cuenta</p>	
+				</div>
+			</button> -->
+			<a class="btn" href="">
+				<div class="btn-content">
+					<p>Crear Cuenta</p>	
+				</div>
+			</a>
 		</div>
 		<div class="slider">
 			<img src="/img/exitos.png" alt="">

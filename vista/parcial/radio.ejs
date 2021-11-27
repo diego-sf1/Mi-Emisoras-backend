@@ -1,0 +1,65 @@
+<section>
+	<div class="contenido">
+		<div class="bannerStation">
+			<a class="favorito" href="">favorito</a>
+			<a class="seguir" href="">+ seguir</a>
+			<img src="<%= banner %>" alt="">
+		</div>
+		<div class="player">
+			<div class="logoR">
+				<img src="<%= infoStation.logo.includes('s0q.png')?'/img/logos/s0q.png':infoStation.logo %>" alt="" class="w-75">
+			</div>
+			<div class="botones">
+				<button onclick="play()" class="play">
+					<div id="play"></div>
+				</button>
+				
+			</div>
+			<div class="dataInfo">
+				<p class="nombre"><%- infoStation.name %></p>
+				<p class="slogan"><%- infoStation.slogan %></p>
+				<p class="descripcion"><%- infoStation.description %></p>
+				<a class="email"><%- infoStation.email %></a>
+				<a class="twitter">@<%- infoStation.twitter_id %></a>
+			</div>
+		</div>
+	</div>
+	<audio src="<%= audioSRC %>"></audio>
+
+</section>
+<section>
+	<div class="contenido">
+		<h1>Recomendaciones</h1>
+		<h3><%= recomendacion.text %></h3>
+		<div class="listRecomendados">
+
+			<% 
+				recomendacion.children.map(i=>{
+					%>
+					<div class="card">
+						<a href="/radio/<%- i.text.split('(')[0].replace(/ /g,'_') %>-<%- i.guide_id.replace('s','e') %> ">
+							<div class="card-img">
+								<% i.image = i.image.includes('s0q.png')?'/img/logos/s0q.png':i.image
+								console.log(i.image)
+								 %>
+								<img src="<%- i.image.includes('https')?i.image:i.image.replace('http','https') %>" alt="">
+							</div>
+							<div class="card-body">
+								<p><%= i.text %></p>
+							</div>
+						</a>
+					</div>
+					<%
+				})
+			 %>
+		</div>
+	</div>
+</section>
+<section>
+	<div class="player">
+		
+	</div>
+</section>
+<script>
+	let urlRadio='<%- audioSRC %>'
+</script>
