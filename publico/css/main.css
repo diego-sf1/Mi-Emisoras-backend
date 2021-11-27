@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 *{
 	margin: 0;
 	padding: 0;
+}
+a{
+	text-decoration: none;
 }
 html{
 	min-height: 100%;
@@ -10,10 +14,11 @@ html{
 body{
 	background-color: #f5f5f5;
 	margin-bottom: 40px;
+	font-family:'Montserrat', sans-serif;
 }
 header{
 	background: #041925;
-	overflow: hidden;
+	
 }
 .contenido, article{
 	max-width: 1140px;
@@ -33,7 +38,7 @@ header .logo{
 	flex-direction: row;
 	align-items: center;
 }
-header .logo .movil{
+.movil, .col.movil{
 	display: none;
 }
 nav{
@@ -48,9 +53,10 @@ nav ul{
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: right;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
+	gap: 30px;
 }
 nav ul li{
 	/*flex: 1 1 auto;*/
@@ -60,17 +66,44 @@ nav ul li{
 nav ul li a{
 	text-decoration: none;
 	color: #ffffff;
+	font-family: Montserrat SemiBold;
+	font-size: 19px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 23px;
+	letter-spacing: 0em;
+	text-align: left;
+
 }
 nav ul li:first-child{
 	display: none;
 }
-header .btn {
+.desktop:hover {
+	display: block;
+	position: relative;
+}
+.desktop:hover .submenu {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	z-index: 1000;
+	overflow: inherit;
+	background: #041925;
+}
+nav .submenu{
+	display: none;
+}
+.btn {
 	display: flex;
 	flex-direction: row;
 	justify-content: end;
 	align-items: center;
 }
-header .btn-content{
+button.btn {
+	background: transparent;
+	border: transparent;
+}
+.btn-content{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -78,7 +111,7 @@ header .btn-content{
 	background: linear-gradient(265.4deg, #D60022 -30.66%, #460251 84.78%), #D60022;
 	border-radius: 30px;
 }
-header .btn p{
+.btn p{
 	font-size: 16px;
 	line-height: 20px;
 
@@ -116,11 +149,24 @@ section#banner-top .contenido{
 	flex-direction: column;
 }
 .col.col-rigth{
-	align-items: flex-end;
-	flex-direction: row;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 20px;
+}
+.col.col-rigth>p{
+	font-family: Montserrat Medium;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 17px;
+	line-height: 160%;
+
+	/* or 27px */
+	text-align: justify;
+
+	color: #83828C;
 }
 #banner-top .col-rigth img{
-	height: 95%;;
+	height: 100%;;
 	width: 100%;
 }
 #banner-top .col:first-child{
@@ -129,8 +175,12 @@ section#banner-top .contenido{
 	justify-content: center;
 }
 #banner-top .col:first-child p{
-	color: #fff;
-	font-size: 3.75em;
+	font-family: Montserrat SemiBold;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 3em;
+	line-height: 73px;
+	color: #FFFFFF;
 }
 #banner-top .col:first-child .search{
 
@@ -155,14 +205,42 @@ section#banner-top .contenido{
 
 section#nuevo .contenido{
 	display: grid;
-	grid-template-columns: 33.333333333% 25% 41.666666667%;
+	grid-template-columns: 41.666666667% 16.666666667% 41.666666667%;
 	grid-template-areas: "nuevo . crear" "slider slider slider";
+	padding-top: 30px;
+	padding-bottom: 20px;
 }
+
 section#nuevo .col-left{
 	grid-area: nuevo;
+	padding-bottom: 30px;
+}
+section#nuevo .col-left p:first-child{
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 27px;
+
+	/* identical to box height */
+	text-transform: uppercase;
+
+	color: #460251;
+}
+section#nuevo .col-left p:last-child{
+	font-family: Montserrat SemiBold;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 45px;
+	line-height: 55px;
+
+	color: #2E303F;
+
+
 }
 section#nuevo .col-rigth{
 	grid-area: crear;
+	padding-bottom: 30px;
 }
 section#nuevo .slider{
 	grid-area: slider;
@@ -178,6 +256,15 @@ section#nuevo .slider img{
 	grid-area: h1;
 	border-right: 2px solid #13D8CB;
 	background: #D9DAE1D6;
+	font-family: Montserrat Medium;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 23px;
+	line-height: 28px;
+
+	/* identical to box height */
+
+	color: #2E303F;
 
 }
 .index article .contenedor{
@@ -295,20 +382,113 @@ i.flecha{
 	height: 60px;
 	display: inline-block;
 }
+.search i.lupa{
+	position: absolute;
+}
 i.lupa{
 	background-image: url('/img/search.png');
 	background-size: 50px 50px;
 	width: 50px;
 	height: 50px;
 	display: inline-block;
-	position: absolute;
 	top: 5px;
 	left: 3px;
 }
 
+.play {
+	width: 50px;
+	display: flex;
+	justify-content: center;
+	clip-path: circle(50%);
+	height: 50px;
+	align-items: center;
+	background: #030F17;
+	border: #030F17;
+}
+.play div {
+	width: 25px;
+	height: 25px;
+	background: #fff;
+	clip-path: polygon(0 0,0 100%, 100% 50%);
+}
+.play .pause {
+	clip-path: polygon(0 0,0% 100%,100% 100%,100% 0);
+}
 
+p.cerrar{
+	display: none;
+}
+.card{
+	padding: 3px;
+	margin: 3px;
+	border: 1px solid;
+}
+.listRecomendados .card:hover{
+    opacity:0.8
+}
+.listRecomendados .card a {
+    display: flex;
+    text-decoration: none;
+}
+
+.listRecomendados .card-body {
+    align-self: center;
+    font-weight: bold;
+    padding-left: 15px;
+    color:#474747;
+}
+.contentInput {
+	border: 1px solid black;
+	padding: 3px;
+	margin: 13px 0 13px 0;
+	border-radius: 30px;
+	overflow: hidden;
+	display: flex;
+	position: relative;
+}
+.contentInput form{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding-left: 5px;
+}
+.contentInput input{
+	border: 0;
+	width: 95%;
+	outline: none;
+	background-color: transparent;
+}
+
+.contentInput input[type="submit"] {
+	background-image: url('/img/lupa.png');
+	background-size: 25px 25px;
+	width: 25px;
+	height: 25px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.bannerStation{
+	height: 200px;
+	overflow: hidden;
+	
+}
+lista-resultado{
+	margin-bottom: 30px;
+}
 
 @media screen and (max-width: 768px){
+	i.flecha{
+		height: 1em;
+		background-size: 1.5em 1.3em;
+		width: 1.5em;
+	}
+	lista-resultado{
+		width: 90%;
+		margin-bottom: 30px;
+	}
 	.linea {
 		width: 30px;
 		height: 3px;
@@ -316,17 +496,19 @@ i.lupa{
 		margin: 5px;
 	}
 	header .main-head{
-		grid-template-columns: 16.666666667% 25% 8.333333333% 50%;
-		grid-template-areas: 'hamburguesa logo . app';
+		grid-template-columns: 16.666666667% 8.333333333% 50% 8.333333333% 8.333333333% 8.333333333%;
+		grid-template-areas: 'hamburguesa . logo . app .';
 	}
 	header .logo{
 		grid-area: logo;
 	}
 	.main-head img{
-		width: 100%;
+		width: auto;
 	}
 	header .logo .movil{
-		display: block;
+		display: flex;
+		flex: 1 1 auto;
+		justify-content: center;
 	}
 	header .logo .desktop{
 		display: none !important;
@@ -338,18 +520,20 @@ i.lupa{
 	header nav .overlay{
 		position: fixed;
 		height: 100vh;
-		background-color: rgba(0,0,0,.8);
+		background: #030F17B2;
 		display: none;
 	}
 	header .btn{
 		display: none;
+	}
+	header .movil .btn{
+		display: block;
 	}
 	header .search{
 		grid-area: app;
 		width: 100%;
 		border-radius: 30px;
 		display: flex;
-		background: linear-gradient(268.83deg, #020F51 18.02%, #A70131 85.62%);
 		overflow: hidden;
 		padding: 1px;
 		position: relative;
@@ -362,6 +546,7 @@ i.lupa{
 		font-size: 0.8em;
 		color: #fff;
 	}
+
 
 
 	nav ul{
@@ -382,33 +567,75 @@ i.lupa{
 	    left: 5%;
 	    top: 50%;
 	    transform: translate(-5%, -50%);
-	    z-index: 5;
+
 	}
 	nav.open .overlay{
 		display: block;
 		z-index: 3;
+	}
+	nav .overlay ul{
+		background: #030F17;
 	}
 	nav ul.animacion{
 		width: 80vw;
 		/*clip-path: inset(0% 100% 0% 100%);
 		-webkit-clip-path: inset(0% 100% 0% 100%);*/
 		pointer-events: all;
+		animation: menuResponsive ease 2s backwards;
 	}
-	nav ul li:first-child{
-		display: block;
-		padding: 18px;
+	nav ul{
+		text-align: left;
+		align-items: flex-start;
+	}
+	nav ul li{
+		margin-left: 30px;
+	}
+	section#banner-top{
+		height: 360px;
 	}
 	#banner-top .contenido{
 		display: flex;
+		flex-direction: column;
 	}
 	#banner-top .col:first-child{
+		align-items: flex-start;
+		height: 250px;
+	}
+	#banner-top .col:first-child p{
+		font-size: 1.5em;
+		line-height: 33px;
+		margin-left: 0.9em;
+	}
+	#banner-top .col:first-child .search{
 		display: none;
+	}
+	#banner-top .col-rigth{
+		display: none;
+	}
+	#banner-top .movil{
+		display: grid;
+		height: 100%;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 100%;
+	}
+	.movil .one{
+		background: url('/img/logos/image 17.png'),url('/img/logos/Rectangle 90.png');
+		background-repeat: no-repeat;
+		background-position-x: calc(100% - 10px),100%;
+		background-position-y: 100%;
+	}
+	.movil .two {
+		background: url('/img/logos/Group 1251.png'),url('/img/logos/micro.png'),url('/img/logos/Rectangle 14.png');
+		background-repeat: no-repeat;
+		background-size: 100%,auto,auto;
+		background-position: 0% 0%,10px calc(100% - 10px),10px calc(100% - 10px);
 	}
 	i.lupa{
 		background-size: 30px 30px;
 		width: 30px;
 		height: 30px;
 		top: 10px;
+		position: relative;
 	}
 	.contentStations {
 		grid-template-columns: 50% 50%;
@@ -416,6 +643,51 @@ i.lupa{
 	address .infos{
 		grid-template-columns: 50% 50%;
 		grid-template-areas: "col1 col1" "col2 col3" "col4 col5";
+	}
+	p.cerrar{
+		display: block;
+		position: absolute;
+	}
+	.desktop{
+		display: none;
+	}
+	.movil, .col.movil{
+		display: block;
+	}
+	p.cerrar {
+		position: absolute;
+		color: white;
+		font-weight: bold;
+		z-index: 3;
+		top: 10px;
+		right: 20px;
+		cursor: pointer;
+	}
+	section#nuevo .contenido{
+		display: flex;
+		flex-direction: column;
+
+	}
+	section#nuevo .col-left.movil p {
+		font-family: Montserrat SemiBold;
+		font-size: 2em;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 29px;
+		letter-spacing: 0em;
+		text-align: center;
+		color: #2E303F;
+		text-transform: none;
+	}
+	section#nuevo .contenido .col-rigth{
+		flex-direction: column-reverse;
+	}
+	footer{
+		height: auto;
+	}
+	footer .contenedor{
+		display: flex;
+		flex-direction: column-reverse;
 	}
 }
 
