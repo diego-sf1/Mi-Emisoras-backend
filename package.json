@@ -1,0 +1,26 @@
+{
+  "name": "emisora",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Olver Edgar Montalvo Sabino",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ckeditor4": "^4.16.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "got": "^11.8.2",
+    "mysql": "^2.18.1",
+    "pls": "^0.1.3"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+}
