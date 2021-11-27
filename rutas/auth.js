@@ -21,7 +21,7 @@ router.post('/login', async (req, res) => {
         //TODO: Add a cookie
         res.send('User logged correctly')
       }
-    }
+    })
   } catch (error) {
     console.log(`Error login the user: ${error}`)
   }
