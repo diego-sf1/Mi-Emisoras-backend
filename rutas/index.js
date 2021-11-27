@@ -1,4 +1,12 @@
 const rutas = require('express').Router()
+const {stationByUrl, streamStation, radios, searchStation} = require('../lib/stations')
+const http = require('https')
+
+rutas.use('/',(req,res,next)=>{
+	res.locals.clase=''
+	console.log(req.headers)
+	next()
+})
 
 
 rutas.get('/',(req,res)=>{
@@ -15,46 +23,51 @@ rutas.get('/estaciones-en-vivo',(req,res)=>{
 	res.render('index')
 })
 
+rutas.get('/radio/:radio',async (req,res)=>{
+  	let siguiendo = false
+  	let rutaRadioArray = req.params.radio.split('-')
+  	if (req.session.siguiendo) {
+    	if (req.session.siguiendo['id']==req.params.radio.split('-')[1]) {
+      		siguiendo=true
+    	}
+  	}
+  	let idRadio = req.params.radio.split('-')[1].replace('e','s')
+	console.log(idRadio)
+	let streamUrl = await streamStation('https://opml.radiotime.com/Tune.ashx?id='+idRadio)
+	if (!streamUrl.includes('https')) {
+		streamUrl = 'https://eapps-cs.herokuapp.com/'+streamUrl
+	}
+	const radioInfo = await radios('https://opml.radiotime.com/Describe.ashx?id='+idRadio,req.headers)
 
-rutas.get('/contrato-de-licencia',(req,res)=>{
-	res.locals.contenido = 'parcial/contratoLicencia'
-	res.locals.titulo = 'Contrato de Licencia'
-	res.locals.clase = ''
+	res.locals.audioSRC = streamUrl
+	res.locals.infoStation = radioInfo[0]
+
+	res.locals.recomendacion = radioInfo[2]?radioInfo[2]:radioInfo[1]
+	res.locals.contenido = 'parcial/radio'
+	res.locals.sigue=siguiendo
+	res.locals.clase='radio'
+	res.locals.banner = 'https://cdn-profiles.tunein.com/'+idRadio+'/images/bannerx.jpg'
 	res.render('index')
 })
 
-rutas.get('/politica-de-privacidad',(req,res)=>{
-	res.locals.contenido = 'parcial/privacidad'
-	res.locals.titulo = 'politica de privacidad'
-	res.locals.clase = ''
+rutas.get('/buscar',async (req,res)=>{
+	let resultado=null
+	console.log(req.query.s)
+
+	res.locals.contenido = 'parcial/buscar'
+	res.locals.resultado = resultado
+	res.locals.q=typeof req.query.s!='undefined'?req.query.s:''
 	res.render('index')
 })
 
-rutas.get('/politica-derechos-de-autor',(req,res)=>{
-	res.locals.contenido = 'parcial/derechoAutor'
-	res.locals.titulo = 'politica de Derecho de Autor'
-	res.locals.clase = ''
-	res.render('index')
+rutas.get('/images/',(req,res)=>{
+	console.log('hola')
+	console.log(req.query.url)
+	http.get(req.query.url,resultado=>{
+		//console.log(resultado)
+		resultado.pipe(res)
+	})
 })
 
-rutas.get('/politica-cookies',(req,res)=>{
-	res.locals.contenido = 'parcial/politicaCookies'
-	res.locals.titulo = 'politica de cookies'
-	res.locals.clase = ''
-	res.render('index')
-})
 
-rutas.get('/terminos-y-usos',(req,res)=>{
-	res.locals.contenido = 'parcial/terminosyusos'
-	res.locals.titulo = 'Termino y Usos'
-	res.locals.clase = ''
-	res.render('index')
-})
-
-rutas.get('/politica-uso-aceptable',(req,res)=>{
-	res.locals.contenido = 'parcial/usoaceptable'
-	res.locals.titulo = 'Politica de uso aceptable'
-	res.locals.clase = ''
-	res.render('index')
-})
 module.exports = rutas
