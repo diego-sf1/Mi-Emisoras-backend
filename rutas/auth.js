@@ -18,7 +18,10 @@ router.post('/login', async (req, res) => {
       if( results.length === 0 || ! (await bcryptjs.compare(password, results[0].user_pass)) ){
         res.send('User or password are incorrect')
       } else {
-        //TODO: Add a cookie
+        //Setting the session
+        req.session.loggedin = true;
+				req.session.username = user_nickname;
+        //TODO: Redirect to a view 
         res.send('User logged correctly')
       }
     })
