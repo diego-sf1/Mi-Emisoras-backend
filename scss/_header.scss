@@ -1,0 +1,137 @@
+
+.main-head .logo .desktop{
+	height: 96px;
+	display: inline-block;
+}
+header .search{
+	display: none;
+}
+
+header{
+	background: #041925;
+	.logo{
+		display: flex;
+		flex-direction:column;
+	align-items: center !important;
+		justify-content: center;
+		
+		a{
+			margin-top: 10px;
+			opacity: 0.5;
+			transition: ease-in-out .5s opacity;
+		}
+		i{
+			font-size: 70px;
+			
+		}
+		a:hover{
+			
+			opacity: 1;
+		}
+		
+		
+	}	
+}
+
+.main-head .logo .desktop{
+	height: 96px;
+	display: inline-block;
+}
+.contenido, article{
+	max-width: 1140px;
+	margin: auto;
+}
+header .main-head, section .contenido, section article,address .infos{
+	max-width: 1140px;
+	margin: auto;
+	display: grid;
+}
+header .main-head{
+	grid-template-columns: 16.66666667% 66.66666667% 16.66666667%;
+	font-family: 'Montserrat', sans-serif;
+}
+ 
+.movil, .col.movil{
+	display: none;
+}
+nav{
+	display: flex;
+}
+nav .overlay{
+	width: 100%;
+	display: flex;
+}
+nav ul{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: right;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	gap: 30px;
+}
+nav ul li{
+	/*flex: 1 1 auto;*/
+	text-align: center;
+	list-style: none;
+}
+nav ul li a{
+	text-decoration: none;
+	color: #ffffff;
+	font-family:$font_1;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0em;
+	text-align: left;
+
+}
+nav ul li:first-child{
+	display: none;
+}
+.desktop:hover {
+	display: block;
+	position: relative;
+}
+.desktop:hover .submenu {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	z-index: 1000;
+	overflow: inherit;
+	background: #041925;
+}
+nav .submenu{
+	display: none;
+}
+.btn {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	align-items: center;
+}
+button.btn {
+	background: transparent;
+	border: transparent;
+}
+.btn-content{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(265.4deg, #D60022 -30.66%, #460251 84.78%), #D60022;
+border-radius: 30px;
+	border-radius: 30px;
+}
+.btn p{
+	font-size: 16px;
+	line-height: 20px;
+
+	/* identical to box height */
+	text-align: center;
+
+	color: #FFFFFF;
+	padding: 15px;
+}

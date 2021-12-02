@@ -13,38 +13,7 @@
 			<lista-resultado></lista-resultado>
 			<script>document.querySelector('lista-resultado').reset('<%- q %>')</script>
 			<%}%>
-			<% if (!resultado) {%>
-				
-			<% }else{ %>
-			
-			<h3><%- resultado.head.title %></h3>
-			<div class="listResultados">
-				<% resultado.body.forEach(i=>{
-					
-					if(i.children){ %>
-					<h4><%- i.text %></h4>
-					<% }else if(i.type && i.type=='link' && Object.keys(i).length==4){ %>
-					<p><a href=""><%- i.text %></a></p>
-					<% }else{ %>
-					<div class="card">
-						<% if (i.type=='audio') { 
-							if (i.guide_id[0]=='s') {%>
-						<a href="/radio/<%- i.text.split('(')[0].replace(/ /g,'_') %>-<%- i.guide_id.replace('s','e') %>">
-							<div class="card-img">
-								<img src="<%- i.image.includes('https')?i.image:i.image.replace('http','https') %>" alt="">
-							</div>
-							<div class="card-body">
-								<p><%- i.text %></p>
-							</div>
-						</a>
-						<%
-							} 
-						}else {} %>
-					</div>
-					<% }
-				})%>
-			</div>
-			<% } %>
+
 		</div>
 	</div>
 </section>

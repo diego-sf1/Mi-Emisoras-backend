@@ -1,0 +1,30 @@
+
+.index article{
+	grid-template-columns: 41.666666667% 50% 8.333333333%;
+	grid-template-areas: "h1 . vertodo" "contenedor contenedor contenedor";
+}
+.index article h1{
+	grid-area: h1;
+	border-right: 4px solid #13D8CB;
+	background: #D9DAE1D6;
+	font-family: Montserrat Medium;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 23px;
+	line-height: 28px;
+    padding: 8px 10px;
+
+	/* identical to box height */
+
+	color: #2E303F;
+
+}
+.index article .contenedor{
+	grid-area: contenedor;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.index article .contenedor .slider-btn{
+	display: flex;
+	height: 250px;
+}

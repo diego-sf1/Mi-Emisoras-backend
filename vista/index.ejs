@@ -2,10 +2,36 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="theme-color" content="#460251">
+	<meta name="theme-color" content="#041925">
+ 	<script type="text/javascript">
+		window.addEventListener('error', function(e) {
+		    console.log(e.target);
+		    if (e.target.parentNode && e.target.parentNode.className=='bannerStation') {
+		    	let imgT = new Image
+		    	imgT.crossOrigin = "Anonymous"
+		    	imgT.src = '/images/?url='+qS('.logoR img').src
+		    	console.log(imgT)
+		    	imgT.onload =function() {
+
+				    const fac = new FastAverageColor();
+				    let color = fac.getColor(imgT)
+				    console.log(color)
+				    e.target.parentNode.style.backgroundColor=color.hex
+				}
+		    	
+		    	let img = qS('.logoR img')
+		    	
+		    	
+		    }
+
+		}, true);
+	</script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><%- typeof titulo != 'undefined'?titulo:'Inicio' %> - Mi Radio Emisoras</title>
 	<link rel="stylesheet" href="/css/main.css?<%- Date.now() %>">
+	<link rel="stylesheet" href="/css/iconos.css">
+	<script src="/js/extractcolor.js"></script>
 	<script src="/js/script.js?<%- Date.now() %>"></script>
 </head>
 <body class="<%= clase %>">
@@ -13,10 +39,10 @@
 		<div class="main-head">
 			<div class="logo">
 				<a href="/" class="desktop">
-					<img src="/favicon-96x96.png" alt="">
+					<i class="icon-icon-logo"></i>
 				</a>
 				<a href="/" class="movil">
-					<img src="/img/logo-icon.png" alt="">
+					<i class="icon-icon-logo"></i>
 				</a>
 			</div>
 			<nav>
@@ -26,20 +52,43 @@
 					<div class="linea"></div>
 				</div>
 				<div class="overlay">
+					
 					<ul>
-						<li><a href="/"><img src="/img/logo-icon.png" alt=""></a></li>
+						<p class="cerrar">x</p>
+						<li class="movil" style="align-self: center;"><a href="/"><img src="/img/logo-icon.png" alt=""></a></li>
+						<li class="movil"><a href="/buscar">Buscar <i class="lupa"></i></a></li>
 						<li><a href="/estaciones-en-vivo">Estaciones en Vivo</a></li>
-						<li><a href="/recientes">Recientes</a></li>
-						<li><a href="/música">Música</a></li>
-						<li><a href="/podcasts">Podcasts</a></li>
-						<li><a href="/noticias">Noticias</a></li>
+						<li class="desktop"><a href="">Recientes </a> 
+							<ul class="submenu">
+								<li><a href="/música">Música</a></li>
+								<li><a href="/deportes">Deportes</a></li>
+								<li><a href="/podcasts">Podcasts</a></li>
+								<li><a href="/noticias">Noticias</a></li>
+							</ul>
+						</li>
+						<li class="movil"><a href="/recientes">Recientes</a></li>
+						<li class="movil"><a href="/música">Música</a></li>
+						<li class="movil"><a href="/deportes">Deportes</a></li>
+						<li class="movil"><a href="/podcasts">Podcasts</a></li>
+						<li class="movil"><a href="/noticias">Noticias</a></li>
+						<% //if(typeof iniciado == 'undefined') { %>
 						<li><a href="/registrarse">Registrarse</a></li>
 						<li><a href="/iniciar-sesion">Iniciar sesión</a></li>
+						<% //}else{ %>
+						<!-- 	<li><a href="">Bienvenido</a></li> -->
+						<% //} %>
+						<li class="movil" style="align-self: center;">
+							<div class="btn">
+								<div class="btn-content">
+									<p>obtener la App</p>	
+								</div>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</nav>
 			<div class="search">
-				<i class="lupa"></i><input type="text" value="" placeholder="Empieza a buscar ahora">
+				<a href="/buscar"><i class="lupa"></i></a>
 			</div>
 			<div class="btn">
 				<div class="btn-content">
@@ -66,23 +115,64 @@
 					<i class="facebook"></i><i class="instagram"></i><i class="twiter"></i>
 				</div>
 			</div>
-			<div class="col">
-				<h3>Escuchar  ></h3>
+			<div class="col memu-footer">
+				
+					<h5>Escuchar <i class="icon-arrow-ios-right"></i> </h5>
+					
+					<ul>
+						<li>Deportes </li>
+						<li>Mas </li>
+						<li>Noticias</li>
+						<li>Podcasts</li>
+						
+					</ul>
+			
+				
+				
 			</div>
-			<div class="col">
-				<h3>Mi Radio  ></h3>
+			
+			<div class="col memu-footer">
+				<h5>Mi Radio <i class="icon-arrow-ios-right"></i> </h5>
+					
+					<ul>
+						<li>Nosotros </li>
+						<li>Contacto </li>
+						<li>Anunciarse</li>
+						
+						
+					</ul>
+				
 			</div>
-			<div class="col">
-				<h3>Producto  ></h3>
+			<div class="col memu-footer">
+				<h5>Producto <i class="icon-arrow-ios-right"></i> </h5>
+					
+					<ul>
+						<li>Emisoras Live </li>
+						<li>Ayuda </li>
+						<li>dispositivos</li>
+						
+						
+					</ul>
+				
 			</div>
-			<div class="col">
-				<h3>Comunidades  ></h3>
+			<div class="col memu-footer">
+				<h5>Comunidades <i class="icon-arrow-ios-right"></i> </h5>
+					
+					<ul>
+						<li>Marcas </li>
+						<li>Mi Radio difusoras </li>
+						<li>Podcasters</li>
+						
+						
+					</ul>
+				
 			</div>
 		</div>
 	</address>
 	<footer>
-		<hr style="border: 2px solid #4C4F69;">
+		<hr style="border: 1px solid #4C4F69;">
 		<div class="contenedor">
+			
 			<div>
 				<a href="/politica-de-privacidad">Privacidad</a>
 				<a href="/terminos-y-usos">Términos</a>
@@ -90,7 +180,8 @@
 				<a href="">Ayuda</a>
 				<a href="">dispositivos</a>
 			</div>
-			<p>&copy;2021  Mi Radio Emisoras. Todos los derechos Reservados</p>	
+			<p class="desktop">&copy;2021  Mi Radio Emisoras. Todos los derechos Reservados</p>	
+			<p class="movil">&copy;2021  Mi Radio Emisoras.<br> Todos los derechos Reservados</p>	
 		</div>
 		
 	</footer>

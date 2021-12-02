@@ -1,0 +1,127 @@
+address{
+   
+	background: #030F17;
+font-style: normal;
+	color: #fff;
+font-size: 14px;
+
+    .infos{
+        grid-template-columns: 25% 16.66666667% 16.66666667% 16.66666667% 16.66666667% 16.66666667% ;
+        grid-template-areas: 'col1 . col2 col3 col4 col5 col6';
+       font-family: $font_1;
+        height: 400px;
+        align-items: center;
+    }
+}
+.memu-footer{
+  min-height: 200px;
+   h5{
+       text-align: left;
+       font-size: 14px;
+       i{
+        margin-left: 5px;
+    }
+   }
+   
+    ul{
+        list-style: none;
+        li{
+            padding: 5px 0px;
+        }
+    }
+}
+address .col:nth-child(1){
+	grid-area: col1;
+   
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    p{
+       text-align: justify;
+    }
+}
+address .col:nth-child(2){
+	grid-area: col2;
+  
+    
+}
+address .col:nth-child(3){
+	grid-area: col3;
+}
+address .col:nth-child(4){
+	grid-area: col4;
+}
+address .col:nth-child(5){
+	grid-area: col5;
+}
+address .col:nth-child(6){
+	grid-area: col6;
+}
+address .group-social{
+   
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+address .group-social i{
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+}
+address i.facebook{
+	background-image: url("/img/Vector.png");
+	background-size: 25px 25px;
+}
+address i.instagram{
+	background-image: url("/img/Vector(1).png");
+	background-size: 25px 25px;
+}
+address i.twiter{
+	background-image: url("/img/Vector(2).png");
+	background-size: 25px 25px;
+}
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	font-size: 0.7em;
+	text-align: center;
+	background-color: #030F17;
+	
+    hr{
+        max-width: 1140px;
+        margin: auto;
+    }
+}
+footer {
+    .contenedor{
+        display: grid;
+        grid-template-columns: 41.66666667% 25% 33.33333333%;
+        grid-template-areas: "link . copy";
+        margin: auto;
+        max-width: 1140px;
+        color: #fff;
+    
+        justify-content: center;
+        align-items: center;
+      
+        height: 80px;
+    }
+	
+    
+}
+
+footer .contenedor p{
+	grid-area: copy;
+}
+footer .contenedor div{
+	grid-area: link;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+footer .contenedor div a{
+	color: #fff;
+	text-decoration: none;
+}

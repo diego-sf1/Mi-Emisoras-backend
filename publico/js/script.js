@@ -55,6 +55,7 @@ const cC=(e)=>{
 	}
 	let div = cE('div')
 	div.classList.add('card')
+	//tarjeta de radios
 	div.innerHTML=`
 	<a href="${e.url}">
 		<div class="card-img">
@@ -233,6 +234,8 @@ class listarResultados extends HTMLElement{
 			<div class="links"></div>
 		</div>
 		`
+		//contenedor de resultados
+
 		this.#filas=`
 			<h4 class='title'></h4>
 			<div class='paginador'></div>
@@ -240,7 +243,7 @@ class listarResultados extends HTMLElement{
 			<div class='paginador'></div>
 
 		`
-		
+		//tarjetas de radios
 		this.#tarjeta=`
 		<a href="">
 			<div class="card-img">
@@ -405,9 +408,11 @@ window.onload = ()=>{
 		navs.classList.toggle('open')
 		uls.classList.toggle('animacion')
 	})
-	cerrar.addEventListener('click',()=>{
-		hamburguesa.click()
-	})
+	if(cerrar){
+		cerrar.addEventListener('click',()=>{
+			hamburguesa.click()
+		})
+	}
 	if (byId('locales')) {
 		locales()
 	}

@@ -1,5 +1,6 @@
 const mysql = require('mysql')
-
+const connection ={}
+/*
 const connection = mysql.createConnection({
     host : process.env.DB_HOST,
     user : process.env.DB_USER,
@@ -14,5 +15,5 @@ connection.connect( (error)=> {
     }
     console.log(`Connection done!`)
 })
-
+*/
 module.exports = connection

@@ -1,0 +1,62 @@
+#nuevo {
+   .contenido{
+   
+    
+       .col-left{
+        padding: 10px;
+       align-self: center;
+      
+       min-height: 200px;
+       p:first-child{
+        font-family: $font_1;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 27px;
+       margin-bottom: 20px;
+        /* identical to box height */
+        text-transform: uppercase;
+    
+        color: #460251;
+    }
+    p:last-child{
+        font-family: $font_1;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 45px;
+        line-height: 55px;
+    
+        color: #2E303F;
+    
+    
+    }
+      
+       }
+       .col-rigth{
+         
+           padding: 10px;
+       }
+   }
+}
+section#nuevo .contenido{
+	display: grid;
+	grid-template-columns: 41.666666667% 16.666666667% 41.666666667%;
+	grid-template-areas: "nuevo . crear" "slider slider slider";
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+
+
+
+
+
+section#nuevo .col-rigth{
+	grid-area: crear;
+	padding-bottom: 30px;
+}
+section#nuevo .slider{
+	grid-area: slider;
+}
+section#nuevo .slider img{
+	width: 100%;
+}

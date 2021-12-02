@@ -1,0 +1,220 @@
+@media screen and (max-width: 768px){
+	i.flecha{
+		height: 1em;
+		background-size: 1.5em 1.3em;
+		width: 1.5em;
+	}
+	lista-resultado{
+		width: 90%;
+		margin-bottom: 30px;
+	}
+	.linea {
+		width: 30px;
+		height: 3px;
+		background: white;
+		margin: 5px;
+	}
+	header .main-head{
+		grid-template-columns: 16.666666667% 8.333333333% 50% 8.333333333% 8.333333333% 8.333333333%;
+		grid-template-areas: 'hamburguesa . logo . app .';
+	}
+	header .logo{
+		grid-area: logo;
+	}
+	.main-head img{
+		width: auto;
+	}
+	header .logo .movil{
+		display: flex;
+		flex: 1 1 auto;
+		justify-content: center;
+	}
+	header .logo .desktop{
+		display: none !important;
+	}
+	header nav{
+		grid-area: hamburguesa;
+		position: relative;
+	}
+	header nav .overlay{
+		position: fixed;
+		height: 100vh;
+		background: #030F17B2;
+		display: none;
+	}
+	header .btn{
+		display: none;
+	}
+	header .movil .btn{
+		display: block;
+	}
+	header .search{
+		grid-area: app;
+		width: 100%;
+		border-radius: 30px;
+		display: flex;
+		overflow: hidden;
+		padding: 1px;
+		position: relative;
+	}
+	header .search input{
+		border-radius: 30px;
+		width: calc(100% - 6px);
+		padding-left: 30px;
+		background: #041925de;
+		font-size: 0.8em;
+		color: #fff;
+	}
+
+
+
+	nav ul{
+		position: fixed;
+		width: 0vw;
+		height: 100vh;
+		background-color: #11D3B7;
+		flex-direction: column;
+		/*clip-path:  inset(0% 100% 0 0%);
+		-webkit-clip-path:  inset(0% 100% 0 0%);*/
+		transition: all 5s ease-out;
+		pointer-events: none;
+		justify-content: flex-start;
+	}
+	.hamburguesa{
+		position: absolute;
+	    cursor: pointer;
+	    left: 5%;
+	    top: 50%;
+	    transform: translate(-5%, -50%);
+
+	}
+	nav.open .overlay{
+		display: block;
+		z-index: 3;
+	}
+	nav .overlay ul{
+		background: #030F17;
+	}
+	nav ul.animacion{
+		width: 80vw;
+		/*clip-path: inset(0% 100% 0% 100%);
+		-webkit-clip-path: inset(0% 100% 0% 100%);*/
+		pointer-events: all;
+		animation: menuResponsive ease 2s backwards;
+	}
+	nav ul{
+		text-align: left;
+		align-items: flex-start;
+	}
+	nav ul li{
+		margin-left: 30px;
+	}
+	section#banner-top{
+		height: 360px;
+	}
+	#banner-top .contenido{
+		display: flex;
+		flex-direction: column;
+	}
+	#banner-top .col:first-child{
+		align-items: flex-start;
+		height: 250px;
+	}
+	#banner-top .col:first-child p{
+		font-size: 1.5em;
+		line-height: 33px;
+		margin-left: 0.9em;
+	}
+	#banner-top .col:first-child .search{
+		display: none;
+	}
+	#banner-top .col-rigth{
+		display: none;
+	}
+	#banner-top .movil{
+		display: grid;
+		height: 100%;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 100%;
+	}
+	.movil .one{
+		background: url('/img/logos/image 17.png'),url('/img/logos/Rectangle 90.png');
+		background-repeat: no-repeat;
+		background-position-x: calc(100% - 10px),100%;
+		background-position-y: 100%;
+	}
+	.movil .two {
+		background: url('/img/logos/Group 1251.png'),url('/img/logos/micro.png'),url('/img/logos/Rectangle 14.png');
+		background-repeat: no-repeat;
+		background-size: 100%,auto,auto;
+		background-position: 0% 0%,10px calc(100% - 10px),10px calc(100% - 10px);
+	}
+	i.lupa{
+		background-size: 30px 30px;
+		width: 30px;
+		height: 30px;
+		top: 10px;
+		position: relative;
+	}
+	.contentStations {
+		grid-template-columns: 50% 50%;
+	}
+	address .infos{
+		grid-template-columns: 50% 50%;
+		grid-template-areas: "col1 col1" "col2 col3" "col4 col5";
+	}
+	p.cerrar{
+		display: block;
+		position: absolute;
+	}
+	.desktop{
+		display: none;
+	}
+	.movil, .col.movil{
+		display: block;
+	}
+	p.cerrar {
+		position: absolute;
+		color: white;
+		font-weight: bold;
+		z-index: 3;
+		top: 10px;
+		right: 20px;
+		cursor: pointer;
+	}
+	section#nuevo .contenido{
+		display: flex;
+		flex-direction: column;
+
+	}
+	section#nuevo .col-left.movil p {
+		font-family: Montserrat SemiBold;
+		font-size: 2em;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 29px;
+		letter-spacing: 0em;
+		text-align: center;
+		color: #2E303F;
+		text-transform: none;
+	}
+	section#nuevo .contenido .col-rigth{
+		flex-direction: column-reverse;
+	}
+	footer{
+		height: auto;
+	}
+	footer .contenedor{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
+
+@keyframes menuResponsive{
+	from{
+		width: 0vw;
+	}
+	to{
+		width: 80vw;
+	}
+}

@@ -4,6 +4,9 @@ const http = require('https')
 
 rutas.use('/',(req,res,next)=>{
 	res.locals.clase=''
+	if (req.session.loggined) {
+		res.locals.iniciado = true
+	}
 	console.log(req.headers)
 	next()
 })
@@ -13,6 +16,12 @@ rutas.get('/',(req,res)=>{
 	res.locals.titulo = 'Inicio'
 	res.locals.contenido = 'parcial/home'
 	res.locals.clase = 'index'
+	res.render('index')
+})
+rutas.get('/registrarse',(req,res)=>{
+	res.locals.titulo = 'Inicio'
+	res.locals.contenido = 'parcial/registro'
+	res.locals.clase = 'registro'
 	res.render('index')
 })
 
