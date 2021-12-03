@@ -70,17 +70,20 @@ address .group-social i{
 	height: 25px;
 	display: inline-block;
 }
-address i.facebook{
-	background-image: url("/img/Vector.png");
-	background-size: 25px 25px;
+address i{
+	font-size: 24px;
+    transition: color ease-in-out .5s;
 }
-address i.instagram{
-	background-image: url("/img/Vector(1).png");
-	background-size: 25px 25px;
-}
-address i.twiter{
-	background-image: url("/img/Vector(2).png");
-	background-size: 25px 25px;
+address{
+    .icon-facebook:hover{
+      color: #3b5998;  
+    }
+    .icon-instagram:hover{
+        color: #C13584;;  
+    }
+    .icon-twitter:hover{
+        color: #00acee;  
+    }
 }
 footer{
 	position: absolute;
