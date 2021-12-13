@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "star": "nodemon --watch  app.js",
-    "tailwind": "postcss css/tailwind-base.css -o publico/css/tailwind.css",
+    "tailwind": "postcss publico/css/tailwind-base.css -o publico/css/tailwind.css",
     "watch:tailwind": "nodemon -x npm run tailwind -w css/tailwind-base.css -w tailwind.config.js -w publico/css/tailwind.css",
     "node-sass": "node-sass scss/ -o publico/css --source-map-embed true",
     "watch:node-sass": "nodemon -e scss -x \"npm run node-sass\"",

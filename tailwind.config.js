@@ -1,5 +1,5 @@
 module.exports = {
- 
+  purge: ['./vista/**/*.{js,ejs}'],
   theme: {
     extend: {},
   
@@ -10,6 +10,6 @@ module.exports = {
     },
   },
   plugins: [
-    require('daisyui'),
+    
   ],
 }
